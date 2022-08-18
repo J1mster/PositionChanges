@@ -1,3 +1,7 @@
+--Ignore this
+
+script:Destroy()
+
 local LoopTime = 5                                  --Time Between position measures.
 local DistanceA = script.OriginalDistance.Value     --Position at the beginning of the measurement time.
 local DistanceB = script.CurrentPosition.Value      --Position at the end of the measurement time.
