@@ -1,0 +1,23 @@
+local LoopTime = 5
+local DistanceA = script.OriginalDistance.Value
+local DistanceB = script.CurrentPosition.Value
+local DistanceC = script.DistanceMoved.Value
+
+local AddedPositions = DistanceA - DistanceB
+
+game.Players.ChildAdded:Connect(function(plr)
+    while true do
+       
+        DistanceA = plr.Parent.Character.Torso.Position
+       
+        wait(LoopTime)
+       
+       DistanceB = plr.Parent.Character.Torso.Position
+       
+        if plr.Parent.Character.Torso.Position.IsNot:DistanceA then
+            DistanceC = |AddedPositions|
+            
+            print("The Player... "..plr.Parent.Name" Has moved... "..DistanceC "Studs" )
+        end     
+    end
+end)
