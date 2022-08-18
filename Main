@@ -1,23 +1,23 @@
-local LoopTime = 5
-local DistanceA = script.OriginalDistance.Value
-local DistanceB = script.CurrentPosition.Value
-local DistanceC = script.DistanceMoved.Value
+local LoopTime = 5                                  --Time Between position measures.
+local DistanceA = script.OriginalDistance.Value     --Position at the beginning of the measurement time.
+local DistanceB = script.CurrentPosition.Value      --Position at the end of the measurement time.
+local DistanceC = script.DistanceMoved.Value        --Distanced Moved after measurement time.
 
-local AddedPositions = DistanceA - DistanceB
+local AddedPositions = DistanceA - DistanceB        --Subtraction value to figure out distance moved.
 
-game.Players.ChildAdded:Connect(function(plr)
-    while true do
+game.Players.ChildAdded:Connect(function(plr)       --Determins the player in question.
+    while true do                                   --Loop
        
-        DistanceA = plr.Parent.Character.Torso.Position
+        DistanceA = plr.Parent.Character.Torso.Position             --Sets DistanceA value
        
-        wait(LoopTime)
+        wait(LoopTime)                                              --Waits your measurement time
        
-       DistanceB = plr.Parent.Character.Torso.Position
+       DistanceB = plr.Parent.Character.Torso.Position              --Sets distance B
        
-        if plr.Parent.Character.Torso.Position.IsNot:DistanceA then
-            DistanceC = |AddedPositions| 
+        if plr.Parent.Character.Torso.Position.IsNot:DistanceA then --Checks if the player has moved
+            DistanceC = |AddedPositions|                            --Sets DistanceC as the Absolute Value of the position moved (to get rid of negatives)
             
-            print("The Player... "..plr.Parent.Name" Has moved... "..DistanceC "Studs" )
-        end
-    end
+            print("The Player... "..plr.Parent.Name" Has moved... "..DistanceC "Studs" )    --Prints how much the player has moved in the output
+        end     
+    end             --Obviously the end parts
 end)
