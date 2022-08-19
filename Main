@@ -12,7 +12,7 @@ game.Players.ChildAdded:Connect(function(plr)
        
         wait(LoopTime)
        
-       DistanceB = plr.Parent.Character.Torso.Position
+        DistanceB = plr.Parent.Character.Torso.Position
        
         if plr.Parent.Character.Torso.Position.IsNot:DistanceA then
             DistanceC = |AddedPositions|
